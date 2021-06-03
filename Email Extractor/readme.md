@@ -16,6 +16,6 @@ To execute the above command, you need to have git installed in your system, it 
 
 Then you need to go to the project directory using ```cd tools/"Email Extractor"/linux```
 
-Then install the requirements using ```pip install -r requirements.txt``` (tkinter in this case)
+Then install the requirements using ```sudo apt-get install python3-tk``` (tkinter in this case)
 
-Then run the executable using ```./email_extractor.py```
+Then run the executable using ```python3 email_extractor.py```
