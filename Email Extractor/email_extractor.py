@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import tkinter as tk
 from tkinter import filedialog as fd
 from tkinter import Entry, messagebox
@@ -5,8 +6,10 @@ import re
 import requests
 import os
 
+
 data=""
 root =tk.Tk()
+root.title('Email Extractor')
 mystring =tk.StringVar(root)
 def getvalue():
     open_button["state"]="active"
@@ -31,17 +34,15 @@ def getvalue():
     root.geometry('500x300') 
     data=""
     data+=(msg+val)
-    print(data)
     
 root.geometry('500x150') 
-tk.Label(root, text="Website url: ").grid(row=0)
+tk.Label(root, padx=10, text="Website url: ").grid(row=0)
 e1 = Entry(root,textvariable = mystring,fg="blue",width=50, bd=3,selectbackground='violet').grid(row=0, column=1, padx = 5, pady = 5)
 button1 = tk.Button(root, 
                 text='Search the website', 
                 fg='White', 
                 bg= 'dark green', command=getvalue).grid(row=2,column=1)
 
-print(data)
 email_found = tk.Label(text="")
 email_found.grid(row=3,column=0)
 
@@ -61,7 +62,7 @@ def select_file():
     with open(f"{filename}","w") as file:
         file.write(data)
         #rint("val:"+val)
-        print("dta"+data)
+        print("data witten to file: "+data)
         print("Your File has been Saved")
 
 # open button
